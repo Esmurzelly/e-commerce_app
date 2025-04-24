@@ -1,10 +1,15 @@
 import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import UserLayout from './components/Layout/UserLayout'
 
 const App = () => {
   return (
-    <div>
-      App
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<UserLayout />} />
+        
+      </Routes>
+    </BrowserRouter>
   )
 }
 
