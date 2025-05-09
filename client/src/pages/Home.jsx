@@ -10,25 +10,25 @@ const placeholderProducts = [
     {
         _id: 1,
         name: "Product 1",
-        price: 1000,
+        price: 10,
         images: [{ url: "https://picsum.photos/500/500?random=5" }]
     },
     {
         _id: 2,
         name: "Product 2",
-        price: 2000,
+        price: 20,
         images: [{ url: "https://picsum.photos/500/500?random=6" }]
     },
     {
         _id: 3,
         name: "Product 3",
-        price: 3000,
+        price: 30,
         images: [{ url: "https://picsum.photos/500/500?random=7" }]
     },
     {
         _id: 4,
         name: "Product 4",
-        price: 4000,
+        price: 42,
         images: [{ url: "https://picsum.photos/500/500?random=8" }]
     },
 ]
