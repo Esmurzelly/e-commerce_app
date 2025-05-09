@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-import loginImg from '../assets/login.webp';
+import registerImg from '../assets/register.webp';
 
-const Login = () => {
+const Register = () => {
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log("Logged in: ", { email, password })
+        console.log("Registered: ", { name, email, password })
     }
 
     return (
@@ -19,8 +20,12 @@ const Login = () => {
                         <h2 className='text-xl font-medium'>Rabbit</h2>
                     </div>
                     <h2 className='text-2xl font-bold text-center mb-6'>Hey there! 👋</h2>
-                    <p className='text-center mb-6'>Enter your username and password to login</p>
+                    <p className='text-center mb-6'>Enter your username and password to register</p>
 
+                    <div className='mb-4'>
+                        <label htmlFor="name" className='block text-sm font-semibold mb-2'>Name</label>
+                        <input type="text" value={name} onChange={(e) => setName(e.target.value)} className='w-full p-2 border rounded' placeholder='Enter your name' name="name" id="name" />
+                    </div>
                     <div className='mb-4'>
                         <label htmlFor="email" className='block text-sm font-semibold mb-2'>Email</label>
                         <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className='w-full p-2 border rounded' placeholder='Enter your email' name="email" id="email" />
@@ -30,22 +35,22 @@ const Login = () => {
                         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className='w-full p-2 border rounded' placeholder='Enter your password' name="password" id="password" />
                     </div>
 
-                    <button type='submit' className='w-full bg-black text-white p-2 rounded-lg font-semibold hover:bg-gray-800'>Sign In</button>
+                    <button type='submit' className='w-full bg-black text-white p-2 rounded-lg font-semibold hover:bg-gray-800'>Sign Up</button>
                 
                     <p className='mt-6 text-center text-sm'>
-                        Don't have an account?
-                        <Link to={'/register'} className='text-blue-500'>Register</Link>
+                        Already have an account? {" "}
+                        <Link to={'/login'} className='text-blue-500'>Login</Link>
                     </p>
                 </form>
             </div>
 
             <div className="hidden md:block w-1/2 bg-gray-800">
                 <div className="h-full flex flex-col justify-center items-center">
-                    <img src={loginImg} alt="login image" className='h-[750px] w-full object-cover' />
+                    <img src={registerImg} alt="login image" className='h-[750px] w-full object-cover' />
                 </div>
             </div>
         </div>
     )
 }
 
-export default Login
+export default Register
